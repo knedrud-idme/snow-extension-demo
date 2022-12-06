@@ -1,0 +1,10 @@
+{
+    "extension_name": {
+        "message": "Snow Demo",
+        "description": "The display name for the extension."
+    },
+    "extension_description": {
+        "message": "A demo browser extension that adds falling snow to the page.",
+        "description": "Description of what the extension does."
+    }
+}

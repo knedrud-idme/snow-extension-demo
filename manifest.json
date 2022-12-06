@@ -1,0 +1,49 @@
+{
+  "name": "Snow Demo",
+  "version": "0.1",
+  "manifest_version": 3,
+  "description": "A demo browser extension that adds falling snow to the page.",
+  "default_locale": "en",
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "background"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["assets/css/snow.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "icons": {
+    "16": "assets/images/snowflake-16.png",
+    "32": "assets/images/snowflake-32.png",
+    "48": "assets/images/snowflake-48.png",
+    "72": "assets/images/snowflake-72.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/css/*",
+        "assets/images/*"
+      ],
+      "matches": ["<all_urls>"],
+      "use_dynamic_url": true
+    }
+  ]
+}
